@@ -1,0 +1,17 @@
+div.DraftEditor-root {
+    border: 1px solid #000;
+    background-color: #f9dbff;
+    height: 200px;
+    width: 100%;
+    padding:5px;
+    overflow-y: auto;
+  }
+  div.DraftEditor-editorContainer,
+  div.public-DraftEditor-content {
+    height: 100%;
+  }
+  
+  .button-container button {
+    margin-right: 5px; /* Add space between buttons */
+  }
+  
