@@ -4,15 +4,9 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const CKTextEditor = () => {
     const initialData = `
-            <p>When I see your face</p>
-            <p>There's not a thing that I would change</p>
-            <p>'Cause you're <strong>amazing</strong></p>
-            <p>Just the way you are ( •̀ ω •́ )✧</p>
-            <p>---------------</p>
-            <p>And when you smile</p>
-            <p>The whole world stops and stares for a while</p>
-            <p>'Cause you're <strong>amazing</strong></p>
-            <p>Just the way you are!!!</p>
+            <p>If app is slow:</p>
+            <p>- 😒 app is unoptimized and shitty - Wrong!!</p>
+            <p>- 😏 Your computer is shitty!! 👍</p>
     `;
     const [ckEditorState, setCkEditorState] = useState(initialData);
     const [ckEditor2State, setCkEditor2State] = useState('');
@@ -33,7 +27,9 @@ const CKTextEditor = () => {
             row = row.replace(tdTagRegex,'');
             const tdEndTagRegex = new RegExp(`<\/td>`,'g');
             row = row.replace(tdEndTagRegex,'');
-            row = autoParagraph(row);
+            if (row != '&nbsp;') {
+                row = autoParagraph(row);
+            }
             row = replaceTags(row, tags);
             row = `<td>` + row + `<\/td>`
             console.log(row);
